@@ -1,0 +1,14 @@
+project_id = "cbqrkobwjtqqcqoitpuo"
+
+[auth.hook.send_email]
+enabled = true
+uri = "https://cbqrkobwjtqqcqoitpuo.supabase.co/functions/v1/custom-auth-email"
+secrets = "SEND_EMAIL_HOOK_SECRET"
+
+[auth.email.template.confirmation]
+subject = "Подтверждение регистрации — СГКБ №5"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.email.template.recovery]
+subject = "Сброс пароля — СГКБ №5"
+content_path = "./supabase/templates/recovery.html"
