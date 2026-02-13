@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design System for Medical Organization Website
+   Color palette: Medical blue (trust), green (health), neutral grays
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Medical blue palette */
+    --background: 210 25% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary: Medical Blue */
+    --primary: 210 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light Blue */
+    --secondary: 210 30% 95%;
+    --secondary-foreground: 210 70% 35%;
+
+    /* Accent: Medical Green */
+    --accent: 145 60% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 70% 45%;
+
+    --radius: 0.5rem;
+
+    /* Custom medical colors */
+    --medical-blue: 210 70% 45%;
+    --medical-blue-light: 210 60% 95%;
+    --medical-green: 145 60% 40%;
+    --medical-green-light: 145 50% 95%;
+    --medical-gray: 210 15% 97%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 210 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 95%;
+    --sidebar-accent-foreground: 210 70% 35%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 210 70% 45%;
+  }
+
+  /* High contrast mode for visually impaired users */
+  .high-contrast {
+    --background: 0 0% 0%;
+    --foreground: 60 100% 50%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 60 100% 50%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 60 100% 50%;
+
+    --primary: 60 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 60 100% 50%;
+
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 60 80% 70%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 60 100% 50%;
+    --input: 0 0% 15%;
+    --ring: 60 100% 50%;
+
+    --medical-blue: 60 100% 50%;
+    --medical-blue-light: 0 0% 10%;
+    --medical-green: 60 100% 50%;
+    --medical-green-light: 0 0% 10%;
+    --medical-gray: 0 0% 5%;
+  }
+
+  .high-contrast * {
+    font-weight: 500 !important;
+  }
+
+  .high-contrast body {
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+
+  /* Black on White high contrast */
+  .scheme-contrast-bw {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 30%;
+    --border: 0 0% 0%;
+  }
+
+  /* Yellow on Black high contrast */
+  .scheme-contrast-yb {
+    --background: 0 0% 0%;
+    --foreground: 60 100% 50%;
+    --card: 0 0% 5%;
+    --card-foreground: 60 100% 50%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 60 100% 50%;
+    --primary: 60 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 60 100% 50%;
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 60 80% 70%;
+    --border: 60 100% 50%;
+  }
+
+  /* Black on Yellow high contrast */
+  .scheme-contrast-by {
+    --background: 60 100% 50%;
+    --foreground: 0 0% 0%;
+    --card: 60 90% 55%;
+    --card-foreground: 0 0% 0%;
+    --popover: 60 90% 55%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 60 100% 50%;
+    --secondary: 60 80% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --accent: 0 0% 0%;
+    --accent-foreground: 60 100% 50%;
+    --muted: 60 80% 70%;
+    --muted-foreground: 0 0% 20%;
+    --border: 0 0% 0%;
+  }
+
+  /* Disable images */
+  .images-disabled img {
+    visibility: hidden !important;
+  }
+  
+  .images-disabled [style*="background-image"] {
+    background-image: none !important;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 60% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 145 50% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 210 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 210 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Print styles */
+@media print {
+  /* Hide non-essential elements */
+  .no-print,
+  header,
+  footer,
+  nav,
+  button,
+  .print\\:hidden {
+    display: none !important;
+  }
+
+  /* Show print-only elements */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Reset background colors for printing */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  /* Ensure content is visible */
+  .print-schedule {
+    break-inside: avoid;
+  }
+
+  /* Remove shadows and borders for cleaner print */
+  .card,
+  [class*="card"] {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  /* Ensure links show URLs */
+  a[href]::after {
+    content: none;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 2cm;
+  }
+}
+
+/* Hide print-only elements by default */
+.print-only {
+  display: none;
+}
